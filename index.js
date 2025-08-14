@@ -1,6 +1,6 @@
 import express from "express";
 import { createServer } from "http";
-import validatingStudent from "./middleware/validatingStudent.js";
+import { validatingStudent } from "./middleware/validatingStudent.js";
 const app = express();
 const server = createServer(app);
 app.use(express.json());

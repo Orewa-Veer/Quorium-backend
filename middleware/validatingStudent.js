@@ -1,12 +1,12 @@
 import Joi from "joi";
-export default function validatingStudent(req, res, next) {
+export function validatingStudent(req, res, next) {
   const error = validate(req.body);
   if (error) return res.status(400).json({ error: error.message });
   else {
     next();
   }
 }
-const validate = (body) => {
+export const validate = (body) => {
   const schema = Joi.object({
     firstName: Joi.string().required(),
     lastName: Joi.string().required(),
